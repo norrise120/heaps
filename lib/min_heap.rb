@@ -87,12 +87,15 @@ class MinHeap
     left = (index * 2) + 1
     right = (index * 2) + 2
 
-    if !@store[left] && !@store[right]
-      return 
+    return if @store[left].nil?
+
+    if !@store[right]
+      swap(index, left) if @store[index].value > @store[left].value
+      return
     elsif !@store[right]
       min = left
     else
-      min = @store[left].key <= @store[right].key ? left : right
+      min = @store[left].key < @store[right].key ? left : right
     end
 
     swap(index, min)
