@@ -1,6 +1,6 @@
 # This method uses a heap to sort an array.
-# Time Complexity:  ?
-# Space Complexity: ?
+# Time Complexity:  O(n log n) where n is the number of items in the list
+# Space Complexity: O(n) where n is the number of items in the list
 def heapsort(list)
   return list if list.length < 2
 	
